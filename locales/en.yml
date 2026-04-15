@@ -1,0 +1,5 @@
+en:
+  theme_metadata:
+    description: Use the previous interation of the topic voting style
+    settings:
+      example_setting: A description of a setting.
