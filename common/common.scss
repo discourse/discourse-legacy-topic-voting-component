@@ -12,6 +12,10 @@
 #topic-title:has(.voting) {
   grid-template-columns: minmax(auto, 10%) 1fr;
   gap: 0 0.75em;
+
+  .voting {
+    align-self: center;
+  }
 }
 
 // ---- Legacy voting layout ----
