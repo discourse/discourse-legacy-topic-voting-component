@@ -3,8 +3,8 @@
   display: none;
 }
 
-// Hide the header voting added in the redesign
-.header-title-voting {
+// Always hide the plugin's new header voting
+.header-title-voting:not(.legacy-header-title-voting) {
   display: none;
 }
 
@@ -108,7 +108,42 @@
   }
 }
 
-// ---- Topic list vote count ----
+// ---- Header voting ----
+.legacy-header-title-voting {
+  font-size: 0.8em;
+  margin-right: 10px;
+
+  .vote-count-wrapper {
+    height: 20px;
+  }
+
+  .show-pointer button {
+    padding: 0.2em 1em;
+  }
+}
+
+// ---- Topic list voting ----
+@if $show-voting-in-topic-list == "true" {
+  .topic-list-voting {
+    position: relative;
+    float: left;
+    width: 84px;
+
+    .mobile-view & {
+      display: none;
+    }
+
+    & + .link-top-line {
+      display: block;
+      margin-left: 96px;
+    }
+
+    & + .link-top-line + .link-bottom-line {
+      margin-left: 96px;
+    }
+  }
+}
+
 .list-vote-count.voted {
   font-weight: bold;
 }

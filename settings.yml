@@ -1,0 +1,6 @@
+show_voting_in_topic_list:
+  default: false
+  type: bool
+show_header_voting:
+  default: false
+  type: bool

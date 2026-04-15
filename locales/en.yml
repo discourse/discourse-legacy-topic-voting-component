@@ -1,6 +1,9 @@
 en:
   theme_metadata:
     description: Restores the previous topic voting visual style
+    settings:
+      show_voting_in_topic_list: "Show the voting component in topic lists"
+      show_header_voting: "Show voting in the docked header when scrolling"
   voted_title: "Voted"
   voting_closed_title: "Closed"
   voting_limit: "Limit"
