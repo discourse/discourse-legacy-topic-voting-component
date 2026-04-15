@@ -1,0 +1,7 @@
+fr:
+  theme_metadata:
+    description: Restaure le style précédent du vote des sujets
+  voted_title: "Voté"
+  voting_closed_title: "Fermé"
+  voting_limit: "Limite"
+  see_all_votes: "Voir vos votes"

@@ -1,0 +1,7 @@
+de:
+  theme_metadata:
+    description: Stellt den vorherigen Stil der Themenabstimmung wieder her
+  voted_title: "Abgestimmt"
+  voting_closed_title: "Geschlossen"
+  voting_limit: "Limit"
+  see_all_votes: "Deine Stimmen anzeigen"

@@ -1,0 +1,7 @@
+it:
+  theme_metadata:
+    description: Ripristina lo stile precedente della votazione degli argomenti
+  voted_title: "Votato"
+  voting_closed_title: "Chiuso"
+  voting_limit: "Limite"
+  see_all_votes: "Vedi i tuoi voti"

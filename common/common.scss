@@ -1,0 +1,159 @@
+// Hide the plugin's connector output (new-style voting)
+.title-voting:not(.legacy-title-voting) {
+  display: none;
+}
+
+// Hide the header voting added in the redesign
+.header-title-voting {
+  display: none;
+}
+
+// ---- Grid layout: match old proportions ----
+#topic-title:has(.voting) {
+  grid-template-columns: minmax(auto, 10%) 1fr;
+  gap: 0 0.75em;
+}
+
+// ---- Legacy voting layout ----
+.legacy-title-voting {
+  box-sizing: border-box;
+  margin-top: 0.33em;
+  position: relative;
+  width: 6em;
+
+  .voting-wrapper {
+    min-width: unset;
+    margin-top: 0;
+  }
+}
+
+.voting-wrapper.show-pointer .vote-count-wrapper:not(.no-votes) {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-low);
+  }
+}
+
+// ---- Vote count: bordered box ----
+.vote-count-wrapper {
+  border: 3px solid var(--primary-low);
+  font-weight: bold;
+  font-size: $font-up-2;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ---- Vote button ----
+.vote-button {
+  width: 100%;
+  margin-top: 0.35em;
+}
+
+// ---- "Who voted" popup ----
+.no-votes-message {
+  padding: 0.25em;
+  color: var(--primary-medium);
+}
+
+.who-voted.popup-menu {
+  a {
+    margin: 0.4em 0.25em;
+    display: inline-block;
+  }
+}
+
+.voting-popup-menu {
+  position: absolute;
+  left: 90px;
+  top: 0;
+  padding: 0.5em;
+  line-height: var(--line-height-medium);
+  z-index: z("usercard") - 1;
+  cursor: initial;
+
+  .regular-votes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rtl & {
+    left: unset;
+    right: 80px;
+  }
+}
+
+// ---- Menu dropdown styling ----
+.topic-voting-menu__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  background: var(--tertiary-low);
+  color: var(--tertiary);
+  padding: 0.65rem 1rem;
+  font-weight: bold;
+
+  &.--locked {
+    background: var(--secondary);
+    color: var(--primary-medium);
+    font-weight: normal;
+  }
+}
+
+// ---- Topic list vote count ----
+.list-vote-count.voted {
+  font-weight: bold;
+}
+
+// ---- Mobile ----
+@media (width <= 767px) {
+  #topic-title:has(.voting) {
+    display: block;
+  }
+
+  .legacy-title-voting {
+    width: 100%;
+    max-width: none;
+    text-align: inherit;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    .rtl & {
+      float: none;
+    }
+  }
+
+  .legacy-title-voting .voting-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .legacy-title-voting .vote-count-wrapper {
+    min-width: 70px;
+    box-sizing: border-box;
+    min-height: 36px;
+    height: auto;
+    font-size: var(--font-0);
+  }
+
+  .legacy-title-voting .vote-button {
+    max-width: 10em;
+    margin-left: 0.5em;
+    margin-top: 0;
+    white-space: nowrap;
+
+    .rtl & {
+      margin-left: 0;
+      margin-right: 0.5em;
+    }
+  }
+
+  .voting-popup-menu {
+    width: calc(100vw - 100px);
+  }
+}

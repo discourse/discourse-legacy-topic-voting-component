@@ -1,5 +1,7 @@
 en:
   theme_metadata:
-    description: Use the previous interation of the topic voting style
-    settings:
-      example_setting: A description of a setting.
+    description: Restores the previous topic voting visual style
+  voted_title: "Voted"
+  voting_closed_title: "Closed"
+  voting_limit: "Limit"
+  see_all_votes: "See your votes"
