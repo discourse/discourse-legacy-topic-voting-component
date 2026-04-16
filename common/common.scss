@@ -144,6 +144,11 @@
   }
 }
 
+// Hide the Votes column when no topics in the table have voting
+.topic-list:not(:has(.vote-before-topic)) .votes-column-header {
+  display: none;
+}
+
 .list-vote-count.voted {
   font-weight: bold;
 }
