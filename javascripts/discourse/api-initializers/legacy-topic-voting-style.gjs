@@ -1,6 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import { defaultHomepage } from "discourse/lib/utilities";
 import LegacyVoteBox from "../components/legacy-vote-box";
+import legacyVotingState from "../lib/legacy-voting-state";
 
 const LegacyVotesItemCell = <template>
   {{#if @topic.can_vote}}
@@ -33,11 +34,15 @@ export default apiInitializer("0.2", (api) => {
   api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
     if (columns.has("votes")) {
       columns.replace("votes", LEGACY_VOTES_COLUMN);
+      legacyVotingState.columnActive = true;
     } else if (
       discoveryService.router.currentRouteName ===
       `discovery.${defaultHomepage()}`
     ) {
       columns.add("votes", LEGACY_VOTES_COLUMN, { before: "topic" });
+      legacyVotingState.columnActive = true;
+    } else {
+      legacyVotingState.columnActive = false;
     }
   });
 });
