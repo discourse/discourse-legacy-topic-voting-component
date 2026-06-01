@@ -1,5 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 import { defaultHomepage } from "discourse/lib/utilities";
+import LegacyMobileVoteOrAvatar from "../components/legacy-mobile-vote-or-avatar";
 import LegacyVoteBox from "../components/legacy-vote-box";
 import legacyVotingState from "../lib/legacy-voting-state";
 
@@ -28,6 +29,8 @@ export default apiInitializer("0.2", (api) => {
   }
 
   const discoveryService = api.container.lookup("service:discovery");
+
+  api.renderInOutlet("topic-list-item-mobile-avatar", LegacyMobileVoteOrAvatar);
 
   // Replace any "votes" column in topic lists with our legacy vote box.
   // Always replace if the column exists (safe regardless of page).

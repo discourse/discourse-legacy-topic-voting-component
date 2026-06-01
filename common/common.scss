@@ -139,14 +139,8 @@
     }
 
     .mobile-view & {
-      float: left;
-      width: 64px;
-      margin-right: 0.75em;
-
-      & + .link-top-line,
-      & + .link-top-line + .link-bottom-line {
-        margin-left: 0;
-      }
+      float: none;
+      width: 48px;
 
       .vote-count-wrapper {
         height: 32px;
@@ -155,6 +149,8 @@
 
       .vote-button {
         margin-top: 0.25em;
+        padding: 0.25em;
+        font-size: var(--font-down-1);
       }
     }
   }

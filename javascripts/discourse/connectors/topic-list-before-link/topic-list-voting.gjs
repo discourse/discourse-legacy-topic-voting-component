@@ -7,7 +7,7 @@ export default class TopicListVoting extends Component {
   @service site;
 
   get shouldRender() {
-    return !legacyVotingState.columnActive || this.site.mobileView;
+    return !legacyVotingState.columnActive && this.site.desktopView;
   }
 
   <template>
