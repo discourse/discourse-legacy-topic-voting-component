@@ -129,10 +129,6 @@
     float: left;
     width: 84px;
 
-    .mobile-view & {
-      display: none;
-    }
-
     & + .link-top-line {
       display: block;
       margin-left: 96px;
@@ -140,6 +136,22 @@
 
     & + .link-top-line + .link-bottom-line {
       margin-left: 96px;
+    }
+
+    .mobile-view & {
+      float: none;
+      width: 48px;
+
+      .vote-count-wrapper {
+        height: 32px;
+        font-size: var(--font-0);
+      }
+
+      .vote-button {
+        margin-top: 0.25em;
+        padding: 0.25em;
+        font-size: var(--font-down-1);
+      }
     }
   }
 }
