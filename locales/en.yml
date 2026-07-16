@@ -8,3 +8,6 @@ en:
   voting_closed_title: "Closed"
   voting_limit: "Limit"
   see_all_votes: "See your votes"
+  anonymous_vote_button:
+    one: "Vote"
+    other: "Votes"
