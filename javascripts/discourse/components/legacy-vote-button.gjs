@@ -49,8 +49,8 @@ export default class LegacyVoteButton extends Component {
         content.title = i18n("topic_voting.vote_title");
       }
     } else {
-      content.label = i18n("topic_voting.anonymous_button", { count: 1 });
-      content.title = i18n("topic_voting.anonymous_button", { count: 1 });
+      content.label = i18n(themePrefix("anonymous_vote_button"), { count: 1 });
+      content.title = i18n(themePrefix("anonymous_vote_button"), { count: 1 });
     }
 
     return content;
